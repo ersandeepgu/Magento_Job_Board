@@ -1,0 +1,75 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+<menu>
+    <add id="Sandeep_Careers::careers"
+         title="Careers"
+         module="Sandeep_Careers"
+         sortOrder="10"
+         resource="Sandeep_Careers::careers"
+    />
+    <add id="Sandeep_Careers::category"
+         title="Category Management"
+         translate="title"
+         module="Sandeep_Careers"
+         sortOrder="20"
+         parent="Sandeep_Careers::careers"
+         resource="Sandeep_Careers::careers"
+    />
+    <add id="Sandeep_Careers::etensions_configuration"
+         title="Category"
+         module="Sandeep_Careers"
+         sortOrder="30"
+         parent="Sandeep_Careers::category"
+         action="careers/category/index"
+         resource="Sandeep_Careers::careers"
+    />
+    <add id="Sandeep_Careers::jobs"
+         title="Manage Jobs"
+         translate="title"
+         module="Sandeep_Careers"
+         sortOrder="40"
+         parent="Sandeep_Careers::careers"
+         resource="Sandeep_Careers::careers"
+    />
+    <add id="Sandeep_Careers::clientlist_configuration"
+         title="Jobs"
+         action="careers/jobs/index"
+         module="Sandeep_Careers"
+         sortOrder="50"
+         parent="Sandeep_Careers::jobs"
+         resource="Sandeep_Careers::careers"
+    />
+    <add id="Sandeep_Careers::jobsapplication"
+         title="Manage Jobs Application"
+         translate="title"
+         module="Sandeep_Careers"
+         sortOrder="40"
+         parent="Sandeep_Careers::careers"
+         resource="Sandeep_Careers::careers"
+    />
+    <add id="Sandeep_Careers::jobsapplication_configuration"
+         title="Jobs Application"
+         action="careers/jobsapplication/index"
+         module="Sandeep_Careers"
+         sortOrder="50"
+         parent="Sandeep_Careers::jobsapplication"
+         resource="Sandeep_Careers::careers"
+    />
+
+    <add id="Sandeep_Careers::configuration"
+         title="Manage Configuration"
+         translate="title"
+         module="Sandeep_Careers"
+         sortOrder="40"
+         parent="Sandeep_Careers::careers"
+         resource="Sandeep_Careers::careers"
+    />
+    <add id="Sandeep_Careers::configuration_configuration"
+          title="Configuration"
+          action="adminhtml/system_config/edit/section/sandeep_config"
+          module="Sandeep_Careers"
+          sortOrder="50"
+          parent="Sandeep_Careers::configuration"
+          resource="Sandeep_Careers::careers"
+    />
+</menu>
+</config>

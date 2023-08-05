@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="job_categories" resource="default" engine="innodb" comment="Job Categories Table">
+        <column xsi:type="int" name="job_category_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+        <column xsi:type="varchar" name="job_category_name" nullable="false" length="255" comment="Job Category Name"/>
+        <column xsi:type="text" name="meta_title" nullable="false" comment="Meta Title"/>
+        <column xsi:type="text" name="meta_description" nullable="false" comment="Meta Description"/>
+        <column xsi:type="text" name="meta_keywords" nullable="false" comment="Meta Keywords"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="job_category_id"/>
+        </constraint>
+    </table>
+    <table name="jobs" resource="default" engine="innodb" comment="Jobs Table">
+        <column xsi:type="int" name="job_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Job Id"/>
+        <column xsi:type="boolean" name="job_status" nullable="true" default="true" comment="Job Status"/>
+        <column xsi:type="varchar" name="job_designation" nullable="false" length="255" comment="Job Designation"/>
+        <column xsi:type="text" name="job_description" nullable="false" comment="Job Description"/>
+        <column xsi:type="int" name="job_category_id" padding="10" unsigned="true" nullable="false" comment="Job Category Id"/>
+        <column xsi:type="text" name="skills" nullable="false" comment="Skills"/>
+        <column xsi:type="text" name="meta_title" nullable="false" comment="Meta Title"/>
+        <column xsi:type="text" name="meta_description" nullable="false" comment="Meta Description"/>
+        <column xsi:type="text" name="meta_keywords" nullable="false" comment="Meta Keywords"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" comment="Creation Time"/>
+        <column xsi:type="timestamp" name="expire_at" on_update="false" nullable="false" comment="Expire Time"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Update Time"/>
+        <column xsi:type="varchar" name="status" nullable="false" length="10" comment="Status"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="job_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="JOB_CATEGORY_ID_JOB_CATEGORIES_JOB_CATEGORY_ID" table="jobs" column="job_category_id" referenceTable="job_categories" referenceColumn="job_category_id" onDelete="CASCADE"/>
+    </table>
+    <table name="job_applications" resource="default" engine="innodb" comment="Job Applications Table">
+        <column xsi:type="int" name="application_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Application Id"/>
+        <column xsi:type="varchar" name="candidate_name" nullable="false" length="255" comment="Candidate Name"/>
+        <column xsi:type="varchar" name="candidate_email" nullable="false" length="255" comment="Candidate Email"/>
+        <column xsi:type="varchar" name="candidate_phone" nullable="false" length="255" comment="Candidate Phone"/>
+        <column xsi:type="int" name="applied_for" padding="10" unsigned="true" nullable="false" comment="Applied For Job Id"/>
+        <column xsi:type="varchar" name="resume_path" nullable="false" length="255" comment="Resume File Path"/>
+        <column xsi:type="timestamp" name="applied_at" on_update="false" nullable="false" comment="Applied Time"/>
+        <column xsi:type="varchar" name="status" nullable="false" length="10" comment="Status"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="application_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="APPLIED_FOR_JOB_ID_JOBS_JOB_ID" table="job_applications" column="applied_for" referenceTable="jobs" referenceColumn="job_id" onDelete="CASCADE"/>
+    </table>
+</schema>

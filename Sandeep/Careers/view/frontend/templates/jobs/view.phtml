@@ -1,0 +1,23 @@
+<?php
+$job = $this->getSingleData();
+
+?>
+<?php if($job->getJobId()) : ?>
+    <div class="job-wrapper">
+        <ol class="jobs-list">
+            <?php if($job['job_status'] == 1): ?>
+                <li class="job-item">
+                    <div class="job-designation"><span>Designation:</span> <?php echo $job['job_designation']; ?></div>
+                    <div class="job-description"><span>Description:</span> <?php echo $job['job_description']; ?></div>                    
+                    <div class="skills"><span>Skills:</span> <?php echo $job['skills']; ?></div>
+                    <div class="meta-title"><span>Title:</span> <?php echo $job['meta_title']; ?></div>
+                    <div class="meta-description"><span>Description:</span> <?php echo $job['meta_description']; ?></div>
+                    <div class="meta-keywords"><span>Keywords:</span> <?php echo $job['meta_keywords']; ?></div>  
+                </li>
+            <?php endif; ?>
+        </ol>
+    </div>   
+<?php else : ?>
+    <?php echo __('This job does not exist'); ?>
+<?php endif; ?>
+

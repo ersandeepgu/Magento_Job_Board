@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" layout="2columns-right">
+   <head> 
+        <css src="Sandeep_Careers::css/custom.css" />
+        <script src="Sandeep_Careers::js/custom.js"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Sandeep\Careers\Block\Category" name="jobs_department_view" template="category/view.phtml" cacheable="false"/>
+        </referenceContainer>
+    </body>
+</page>

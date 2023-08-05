@@ -1,0 +1,18 @@
+<?php
+$job = $this->getSingleData();
+?>
+<?php if($job->getJobCategoryId()) : ?>
+    <div class="job-wrapper">
+        <ol class="jobs-list">
+            <li class="job-item">
+                <div class="job-designation"><span>Category:</span> <?php echo $job['job_category_name']; ?></div>
+                <div class="meta-description"><span>Description:</span> <?php echo $job['meta_description']; ?></div>
+                <div class="meta-title"><span>Title:</span> <?php echo $job['meta_title']; ?></div>
+                <div class="meta-keywords"><span>Keywords:</span> <?php echo $job['meta_keywords']; ?></div>  
+            </li>
+        </ol>
+    </div>   
+<?php else : ?>
+    <?php echo __('This category does not exist'); ?>
+<?php endif; ?>
+
