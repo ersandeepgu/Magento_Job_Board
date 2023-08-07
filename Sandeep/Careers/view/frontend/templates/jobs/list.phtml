@@ -1,5 +1,7 @@
 <?php
     $jobCollection = $this->getJobsCollection();
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $fileType = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('sandeep_config/general/allowed_files');
 ?>
 
 <div class="job-wrapper">
@@ -36,6 +38,7 @@
                                     <input type="text" id="candidate_phone" name="candidate_phone">
                                     <label for="resume_path">Upload Resume:</label><br>
                                     <input type="file" id="resume_path" name="resume_path"><br>
+                                     <?php echo 'Allow files Only '. $fileType ?>
                                     <div style="margin-top: 10px;">
                                         <input type="submit" id="submit-btn" value="Submit">
                                     </div>

@@ -43,7 +43,6 @@ class Save extends \Magento\Framework\App\Action\Action
     }
 	public function execute()
     {
-die('sassa');
         $data = $this->getRequest()->getParams();
 
         $allowfileTypes = $this->scopeConfig->getValue(self::LIST_FILES_ENABLED);

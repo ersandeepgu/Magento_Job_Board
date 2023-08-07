@@ -5,11 +5,15 @@ namespace Sandeep\Careers\Block;
 use Magento\Framework\View\Element\Template\Context;
 use Sandeep\Careers\Model\CategoryFactory;
 use Magento\Cms\Model\Template\FilterProvider;
+use Magento\Store\Model\ScopeInterface;
+
 
 
 class Category extends \Magento\Framework\View\Element\Template
 {
    
+    Const LIST_FILES_ENABLED = 'sandeep_config/general/allowed_files';
+
     protected $category;
     public function __construct(
         Context $context,
