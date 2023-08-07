@@ -67,6 +67,13 @@ Update Job Status:-
 ######
 
 
+Job Landing Page:- 
+
+[![Screenshot-at-2023-08-07-12-25-05.png](https://i.postimg.cc/1zSbP5KT/Screenshot-at-2023-08-07-12-25-05.png)](https://postimg.cc/JsTp58vc)
+
+
+######
+
 Frontend:- 
 
 
