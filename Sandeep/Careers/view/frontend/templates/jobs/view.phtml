@@ -1,5 +1,6 @@
 <?php
 $job = $this->getSingleData();
+// $fileType = $this->getFileType();
 $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $fileType = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('sandeep_config/general/allowed_files');
 ?>

@@ -6,8 +6,7 @@ use Magento\Framework\View\Element\Template\Context;
 use Sandeep\Careers\Model\CategoryFactory;
 use Magento\Cms\Model\Template\FilterProvider;
 use Magento\Store\Model\ScopeInterface;
-
-
+use Magento\Framework\App\Config\ScopeConfigInterface;
 
 class Category extends \Magento\Framework\View\Element\Template
 {
@@ -18,10 +17,12 @@ class Category extends \Magento\Framework\View\Element\Template
     public function __construct(
         Context $context,
         CategoryFactory $category,
+        ScopeConfigInterface $scopeConfig,
         FilterProvider $filterProvider
     ) {
         $this->category = $category;
         $this->_filterProvider = $filterProvider;
+        $this->scopeConfig = $scopeConfig;
         parent::__construct($context);
     }
 
@@ -43,5 +44,13 @@ class Category extends \Magento\Framework\View\Element\Template
         }else{
             return false;
         }
+    }
+
+
+    public function getFileType() {
+        return $this->scopeConfig->getValue(
+            'sandeep_config/general/allowed_files',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        );
     }
 }

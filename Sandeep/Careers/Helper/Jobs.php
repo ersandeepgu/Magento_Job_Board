@@ -55,7 +55,8 @@ class Jobs extends AbstractHelper
         $model->setData('job_designation', $data['job_designation']);       
         $model->setData('job_description', $data['job_description']);       
         $model->setData('job_category_id', $data['job_category_id']);       
-        $model->setData('skills', $data['skills']);       
+        $model->setData('skills', $data['skills']);   
+         $model->setStatus($data['job_status']);    
         $model->setData('meta_title', $data['meta_title']);       
         $model->setData('meta_description', $data['meta_description']);       
         $model->setData('meta_keywords', $data['meta_keywords']);       
@@ -78,6 +79,7 @@ class Jobs extends AbstractHelper
             ->setJobDescription($data['job_description'])
             ->setJobCategoryId($data['job_category_id'])
             ->setSkills($data['skills'])
+            ->setJobStatus($data['job_status'])
             ->setMetaTitle($data['meta_title'])
             ->setMetaDescription($data['meta_description'])
             ->setMetaKeywords($data['meta_keywords']);

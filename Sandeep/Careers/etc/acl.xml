@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Sandeep_Careers::careers" title="Careers" sortOrder="10">
+                    <resource id="Sandeep_Careers::category" title="Category Management" sortOrder="20">
+                        <resource id="Sandeep_Careers::etensions_configuration" title="Category" sortOrder="30" />
+                    </resource>
+                    <resource id="Sandeep_Careers::jobs" title="Manage Jobs" sortOrder="40">
+                        <resource id="Sandeep_Careers::clientlist_configuration" title="Jobs" sortOrder="50" />
+                    </resource>
+                    <resource id="Sandeep_Careers::jobsapplication" title="Manage Jobs Application" sortOrder="60">
+                        <resource id="Sandeep_Careers::jobsapplication_configuration" title="Jobs Application" sortOrder="70" />
+                    </resource>
+                    <resource id="Sandeep_Careers::configuration" title="Manage Configuration" sortOrder="80">
+                        <resource id="Sandeep_Careers::configuration_configuration" title="Configuration" sortOrder="90" />
+                    </resource>
+                </resource>
+                    <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Sandeep_Careers::system_config" title="Careers Configurations"/>
+                        </resource>
+                    </resource>
+                </resource>
+
+            </resource>
+        </resources>
+    </acl>
+</config>

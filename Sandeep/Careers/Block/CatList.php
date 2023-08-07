@@ -4,6 +4,8 @@ namespace Sandeep\Careers\Block;
 
 use Magento\Framework\View\Element\Template\Context;
 use Sandeep\Careers\Helper\Category;
+use Magento\Framework\App\Config\ScopeConfigInterface;
+
 
 /**
  * jobs List block
@@ -22,16 +24,24 @@ class CatList extends \Magento\Framework\View\Element\Template
      */
     private $categoryHelper;
 
+     /**
+     * @var ScopeConfigInterface
+     */
+    protected $scopeConfig;
+
+
     public function __construct(
         Context $context,
         \Sandeep\Careers\Model\ResourceModel\Jobs\CollectionFactory $collectionFactory,
         \Sandeep\Careers\Model\ResourceModel\Category\CollectionFactory $categoryCollectionFactory,
         Category $categoryHelper,
+        ScopeConfigInterface $scopeConfig
 
     ) {
         $this->jobsCollection = $collectionFactory->create();
         $this->categoryCollection = $categoryCollectionFactory->create();
         $this->categoryHelper = $categoryHelper;
+        $this->scopeConfig = $scopeConfig;
         parent::__construct($context);
     }
 
@@ -69,5 +79,13 @@ class CatList extends \Magento\Framework\View\Element\Template
     public function getPagerHtml()
     {
         return $this->getChildHtml('pager');
+    }
+
+
+    public function getFileType() {
+        return $this->scopeConfig->getValue(
+            'sandeep_config/general/allowed_files',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+        );
     }
 }

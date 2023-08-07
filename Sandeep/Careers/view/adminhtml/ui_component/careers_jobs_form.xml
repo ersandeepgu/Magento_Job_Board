@@ -68,13 +68,11 @@
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string" translate="true">Job Status</item>
                     <item name="source" xsi:type="string">careers_jobs_form_data_source</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item> 
                 </item>
-            </argument>
-           <!--  <settings>
-                <dataType>text</dataType>
-                <label translate="true">Job Status</label>
-                <dataScope>job_category_id</dataScope>                
-            </settings> -->
+            </argument>            
         </field>
          <field name="job_category_id" formElement="select">
             <argument name="data" xsi:type="array">
@@ -82,13 +80,12 @@
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">careers_jobs_form_data_source</item>
                      <item name="label" xsi:type="string" translate="true">Job Category</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item> 
+
                 </item>
-            </argument>
-            <!-- <settings>
-                <dataType>text</dataType>
-                <label translate="true">Job Category</label>
-                <dataScope>job_category_id</dataScope>                
-            </settings> -->
+            </argument>            
         </field>
         <field name="job_designation">
             <argument name="data" xsi:type="array">
@@ -97,9 +94,9 @@
                     <item name="label" xsi:type="string" translate="true">Job Designation</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="source" xsi:type="string">data</item>
-                    <!-- <item name="validation" xsi:type="array">
+                    <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
-                    </item> -->
+                    </item> 
                 </item>
             </argument>
         </field>
@@ -110,9 +107,9 @@
                     <item name="label" xsi:type="string" translate="true">Job Description</item>
                     <item name="formElement" xsi:type="string">textarea</item>
                     <item name="source" xsi:type="string">data</item>
-                    <!-- <item name="validation" xsi:type="array">
+                    <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
-                    </item> -->
+                    </item> 
                 </item>
             </argument>
         </field>
@@ -123,9 +120,9 @@
                     <item name="label" xsi:type="string" translate="true">Skills</item>
                     <item name="formElement" xsi:type="string">textarea</item>
                     <item name="source" xsi:type="string">data</item>
-                    <!-- <item name="validation" xsi:type="array">
+                    <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
-                    </item> -->
+                    </item> 
                 </item>
             </argument>
         </field>
@@ -136,9 +133,9 @@
                     <item name="label" xsi:type="string" translate="true">Meta Title</item>
                     <item name="formElement" xsi:type="string">textarea</item>
                     <item name="source" xsi:type="string">data</item>
-                    <!-- <item name="validation" xsi:type="array">
+                    <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
-                    </item> -->
+                    </item> 
                 </item>
             </argument>
         </field>
@@ -149,9 +146,9 @@
                     <item name="label" xsi:type="string" translate="true">Meta Description</item>
                     <item name="formElement" xsi:type="string">textarea</item>
                     <item name="source" xsi:type="string">data</item>
-                    <!-- <item name="validation" xsi:type="array">
+                    <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
-                    </item> -->
+                    </item> 
                 </item>
             </argument>
         </field>
@@ -162,9 +159,9 @@
                     <item name="label" xsi:type="string" translate="true">Meta Keywords</item>
                     <item name="formElement" xsi:type="string">textarea</item>
                     <item name="source" xsi:type="string">data</item>
-                    <!-- <item name="validation" xsi:type="array">
+                    <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
-                    </item> -->
+                    </item> 
                 </item>
             </argument>
         </field>
@@ -181,6 +178,6 @@
                     </item>
                 </item>
             </argument>
-        </field> -->
+        </field>  -->
     </fieldset>  
 </form>

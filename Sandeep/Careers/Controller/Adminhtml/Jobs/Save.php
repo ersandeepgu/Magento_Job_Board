@@ -43,7 +43,7 @@ class Save extends Action
      */
     public function execute()
     {
-        $data = $this->getRequest()->getPostValue();        
+        $data = $this->getRequest()->getPostValue();   
         $id = $this->getRequest()->getParam("job_id");
         if($id) {
             $this->helper->updateJobs($data);
