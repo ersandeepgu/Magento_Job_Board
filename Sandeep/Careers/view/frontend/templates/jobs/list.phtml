@@ -16,14 +16,14 @@
                     <div class="meta-title"><span>Title:</span> <?php echo $job['meta_title']; ?></div>
                     <!-- <div class="meta-description"><span>Description:</span> <?php echo $job['meta_description']; ?></div> -->
                     <div class="meta-keywords"><span>Keywords:</span> <?php echo $job['meta_keywords']; ?></div> 
-                    <div class="actions"> 
-                        <a href="<?php echo $block->getBaseUrl().'careers/index/view/id/'.$job['job_id']; ?>" class="action view">
-                            <span>View</span>
+                    <div class="actions" > 
+                        <a href="<?php echo $block->getBaseUrl().'careers/index/view/id/'.$job['job_id']; ?>" style="margin-right: 10px; " class="action view">
+                            <span>View Jobs</span>
                         </a> 
                         <button type="button" class="apply-btn">Apply Now</button>
                         <div class="form" style="display: none;">
                             <div class="jobsform">
-                                <form id="applicationForm">
+                                <form id="applicationForm" action="careers/index/save" method="post">
                                     <label for="candidate_name">Apply For:</label>
                                     <input type="text" id="candidate_name" disabled name="candidate_name" value="<?php echo $job['job_designation']; ?>"><br>
                                     <label for="applied_for">Job Id:</label>
@@ -42,9 +42,7 @@
                                 </form>
                             </div>
                         </div>                        
-                    </div> 
-
-                              
+                    </div>                               
                 </li>
             <?php endif; ?>
         <?php endforeach; ?>
@@ -53,8 +51,8 @@
 <script>
     require(['jquery', 'Magento_Ui/js/modal/confirm'], function($, confirm) {
         $(document).ready(function(){
-            $("#submit-btn").click(function(){
-                $(".apply-btn").next(".form").toggle();
+            $(".apply-btn").click(function(){
+                $(this).next(".form").toggle();
             });
         });
     });

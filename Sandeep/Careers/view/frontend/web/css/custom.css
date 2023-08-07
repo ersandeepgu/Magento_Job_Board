@@ -1,9 +1,9 @@
-body {
+/*body {
     font-family: 'Arial', sans-serif;
     color: #333;
     background-color: #f0f0f0;
 }
-
+*/
 .job-wrapper {
     /*max-width: 800px;
     margin: 0 auto;
@@ -200,4 +200,43 @@ body {
 
 .job-description, .skills, .meta-title, .meta-description, .meta-keywords {
     font-size: 1em;
+}
+
+.job-category-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Here is the change */
+}
+.job-category-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: calc(33% - 30px); 
+    box-sizing: border-box; 
+}
+.job-category-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+.job-category-jobs {
+    font-size: 16px;
+}
+.job-category-description {
+    font-size: 14px;
+    margin-top: 10px;
+}
+.view-jobs {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.view-jobs:visited, 
+.view-jobs a:visited {
+    color: white;
 }

@@ -7,7 +7,7 @@
     </head>
     <body>
         <referenceContainer name="content">
-            <block class="Sandeep\Careers\Block\Category" name="jobs_department_view" template="category/view.phtml" cacheable="false"/>
+            <block class="Sandeep\Careers\Block\Category" name="jobs_category_view" template="category/view.phtml" cacheable="false"/>
         </referenceContainer>
     </body>
 </page>

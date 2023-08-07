@@ -13,7 +13,12 @@ use Magento\Store\Model\StoreManagerInterface;
 
 class Save extends \Magento\Framework\App\Action\Action
 {
-
+    // public function execute()
+    // {
+    //     $this->_view->loadLayout();
+    //     $this->_view->getLayout()->initMessages();
+    //     $this->_view->renderLayout();
+    // }
 
     Const LIST_FILES_ENABLED = 'sandeep/sandeep_config/allowed_files';
 	
@@ -43,11 +48,11 @@ class Save extends \Magento\Framework\App\Action\Action
     }
 	public function execute()
     {
-        $data = $this->getRequest()->getPostValue();
+        $data = $this->getRequest()->getParams();
 
-        print_r($data);
+        // print_r($data);
 
-        die('sasas');
+        // die('sasas');
         if(isset($_FILES['image']['name']) && $_FILES['image']['name'] != '') {
             try{
                 $uploaderFactory = $this->uploaderFactory->create(['fileId' => 'image']);

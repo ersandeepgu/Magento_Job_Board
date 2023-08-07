@@ -10,7 +10,8 @@
             <block class="Magento\Framework\View\Element\Html\Link\Current" name="custom-footer-link">
                 <arguments>
                     <argument name="label" xsi:type="string">Careers</argument>
-                    <argument name="path" xsi:type="string">careers</argument>
+                    <!-- <argument name="path" xsi:type="string">careers</argument> -->
+                    <argument name="path" xsi:type="string">careers/category/catlist</argument>
                 </arguments>
             </block>
         </referenceBlock>

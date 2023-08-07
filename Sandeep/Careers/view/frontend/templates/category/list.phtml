@@ -1,0 +1,17 @@
+<?php
+    $catCollection = $this->getCategoryCollection();   
+?>
+<div class="job-category-wrapper">
+    <?php foreach($catCollection as $category): ?>
+        <div class="job-category-item">
+            <div class="job-category-title">
+                <a href="<?php echo $block->getBaseUrl().'careers/category/view/id/'.$category['job_category_id']; ?>" class="action view">
+                     <?php echo $category['job_category_name']; ?>
+                </a>  
+            </div>
+            <div class="job-category-jobs">Number of jobs available: <?php  echo $this->getJobCount($category['job_category_id']); ?></div>
+            <div class="job-category-description"><?php echo $category['meta_description']; ?></div>
+            <a href="<?php echo $block->getBaseUrl().'careers'; ?>" class="view-jobs">View Jobs</a>
+        </div>
+    <?php endforeach; ?>
+</div>
