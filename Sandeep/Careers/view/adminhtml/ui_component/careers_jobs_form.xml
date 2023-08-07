@@ -66,33 +66,29 @@
             <argument name="data" xsi:type="array">
                 <item name="options" xsi:type="object">Sandeep\Careers\Model\Source\Jobs\Status</item>
                 <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Job Status</item>
                     <item name="source" xsi:type="string">careers_jobs_form_data_source</item>
                 </item>
             </argument>
-            <settings>
+           <!--  <settings>
                 <dataType>text</dataType>
                 <label translate="true">Job Status</label>
-                <dataScope>job_category_id</dataScope>
-                <!-- <validation>
-                    <rule name="required-entry" xsi:type="boolean">true</rule>
-                </validation> -->
-            </settings>
+                <dataScope>job_category_id</dataScope>                
+            </settings> -->
         </field>
          <field name="job_category_id" formElement="select">
             <argument name="data" xsi:type="array">
                 <item name="options" xsi:type="object">Sandeep\Careers\Model\Source\Category</item>
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">careers_jobs_form_data_source</item>
+                     <item name="label" xsi:type="string" translate="true">Job Category</item>
                 </item>
             </argument>
-            <settings>
+            <!-- <settings>
                 <dataType>text</dataType>
                 <label translate="true">Job Category</label>
-                <dataScope>job_category_id</dataScope>
-                <!-- <validation>
-                    <rule name="required-entry" xsi:type="boolean">true</rule>
-                </validation> -->
-            </settings>
+                <dataScope>job_category_id</dataScope>                
+            </settings> -->
         </field>
         <field name="job_designation">
             <argument name="data" xsi:type="array">

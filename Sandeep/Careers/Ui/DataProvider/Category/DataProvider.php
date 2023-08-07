@@ -93,9 +93,6 @@ class DataProvider extends AbstractDataProvider
             $this->getCollection()->load();
         }
         $items = $this->getCollection()->getData();
-       //  echo '<pre>';
-       // print_r($items);
-       // die('sa');
         return [
             'totalRecords' => $this->getCollection()->getSize(),
             'items' => array_values($items),

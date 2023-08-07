@@ -168,7 +168,7 @@
                     </item>
                 </argument>
             </column>
-            <column name="job_category_id">
+            <column name="job_category_id" class="Sandeep\Careers\Ui\Component\Listing\Columns\Category\Categoryname">
                 <argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">
                         <item name="filter" xsi:type="string">text</item>

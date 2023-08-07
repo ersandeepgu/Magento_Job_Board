@@ -7,7 +7,7 @@
     </head>
     <body>
         <referenceBlock name="footer_links">
-            <block class="Magento\Framework\View\Element\Html\Link\Current" name="custom-footer-link">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="custom-footer-link" ifconfig="sandeep_config/general/enabled">
                 <arguments>
                     <argument name="label" xsi:type="string">Careers</argument>
                     <!-- <argument name="path" xsi:type="string">careers</argument> -->

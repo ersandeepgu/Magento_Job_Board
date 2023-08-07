@@ -1,5 +1,6 @@
 <?php
 
+
 namespace Sandeep\Careers\Controller\Index;
 
 use Magento\Framework\App\Action\Context;
@@ -13,14 +14,8 @@ use Magento\Store\Model\StoreManagerInterface;
 
 class Save extends \Magento\Framework\App\Action\Action
 {
-    // public function execute()
-    // {
-    //     $this->_view->loadLayout();
-    //     $this->_view->getLayout()->initMessages();
-    //     $this->_view->renderLayout();
-    // }
-
-    Const LIST_FILES_ENABLED = 'sandeep/sandeep_config/allowed_files';
+   
+    Const LIST_FILES_ENABLED = 'sandeep_config/general/allowed_files';
 	
     /**
      * @var StoreManagerInterface
@@ -48,9 +43,12 @@ class Save extends \Magento\Framework\App\Action\Action
     }
 	public function execute()
     {
+die('sassa');
         $data = $this->getRequest()->getParams();
 
-        // print_r($data);
+        $allowfileTypes = $this->scopeConfig->getValue(self::LIST_FILES_ENABLED);
+
+        print_r($allowfileTypes);
 
         // die('sasas');
         if(isset($_FILES['image']['name']) && $_FILES['image']['name'] != '') {
