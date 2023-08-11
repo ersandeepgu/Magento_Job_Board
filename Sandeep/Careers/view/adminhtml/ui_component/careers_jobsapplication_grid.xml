@@ -7,14 +7,14 @@
             <item name="deps" xsi:type="string">careers_jobsapplication_grid.careers_jobsapplication_grid_source</item>
         </item>
         <item name="spinner" xsi:type="string">careers_jobsapplication_grid_columns</item>
-        <!-- <item name="buttons" xsi:type="array">
+        <item name="buttons" xsi:type="array">
             <item name="add" xsi:type="array">
                 <item name="name" xsi:type="string">add</item>
                 <item name="label" xsi:type="string" translate="true">Add Jobs Application</item>
                 <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="string">*/*/newjobs</item>
+                <item name="url" xsi:type="string">*/*/newjobsapplication</item>
             </item>
-        </item> -->
+        </item>
     </argument>
     <dataSource name="careers_jobsapplication_grid_source">
         <argument name="dataProvider" xsi:type="configurableObject">
@@ -97,6 +97,13 @@
                                 <param name="status">2</param>
                             </url>
                         </action>
+                        <action name="3">
+                            <type>closed</type>
+                            <label translate="true">Rejected</label>
+                            <url path="*/*/massStatus">
+                                <param name="status">3</param>
+                            </url>
+                        </action>
                     </actions>
                 </settings>
             </action>
@@ -140,6 +147,7 @@
                 <item name="options" xsi:type="object">Sandeep\Careers\Model\Source\JobsApplication\Status</item>
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">select</item>
+                    <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
                     <item name="editor" xsi:type="string">select</item>
                     <item name="dataType" xsi:type="string">select</item>
@@ -217,23 +225,24 @@
                     <item name="editor" xsi:type="string">select</item>
                     <item name="dataType" xsi:type="string">select</item>
                     <item name="label" xsi:type="string" translate="true">Job Application Status</item>
-                    <item name="sortOrder" xsi:type="number">30</item>
+                    <!-- <item name="sortOrder" xsi:type="number">30</item> -->
                 </item>
             </argument>
         </column> 
-
-
-         <actionsColumn name="resume_path" class="Sandeep\Careers\Ui\Component\Listing\Columns\JobsApplication\Download">
+        <actionsColumn name="resume_path" class="Sandeep\Careers\Ui\Component\Listing\Columns\JobsApplication\Download">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="indexField" xsi:type="string">resume_path</item>
-                    <item name="urlEntityParamName" xsi:type="string">resume_path</item>
-                    <item name="sortOrder" xsi:type="number">2000</item>
-                    <item name="label" xsi:type="string" translate="true">Downlaod</item>
+                    <item name="downloadUrlPath" xsi:type="string">careers/jobsapplication/download</item>
+                    <item name="viewUrlPath" xsi:type="string">careers/jobsapplication/viewresume</item>
+                    <item name="urlEntityParamName" xsi:type="string">application_id</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
                 </item>
             </argument>
-        </actionsColumn>   
-
+            <settings>
+                <label translate="true">Resume Action</label>
+            </settings>
+        </actionsColumn>
         <actionsColumn name="actions" class="Sandeep\Careers\Ui\Component\Listing\Columns\JobsApplication\Actions">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">

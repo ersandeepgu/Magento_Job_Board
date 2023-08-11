@@ -44,7 +44,7 @@ class Save extends Action
     public function execute()
     {
         $data = $this->getRequest()->getPostValue();        
-        $id = $this->getRequest()->getParam("job_id");
+        $id = $this->getRequest()->getParam("application_id");
         if($id) {
             $this->helper->updateJobsApplication($data);
             $this->messageManager->addSuccess( __("Update JobsApplication's Details Successfully") );

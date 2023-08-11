@@ -1,6 +1,6 @@
 <?php
     $jobCollection = $this->getJobsCollection();
-    // $fileType = $this->getFileType();
+    $currentDate = strtotime(date('Y/m/d H:i:s'));   
     $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
     $fileType = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('sandeep_config/general/allowed_files');
 ?>
@@ -8,7 +8,10 @@
 <div class="job-wrapper">
     <ol class="jobs-list">
         <?php foreach($jobCollection AS $job): ?>
-            <?php if($job['job_status'] == 1): ?>
+            <?php 
+                $expireAt = strtotime($job['expire_at']);
+                if($job['job_status'] == 1 && ($currentDate < $expireAt)): 
+            ?>
                 <li class="job-item">
                     <div class="job-designation"><span>Designation:</span> <?php echo $job['job_designation']; ?></div>
                     <div class="job-description"><span>Description:</span> <?php echo $job['job_description']; ?></div>
@@ -29,10 +32,12 @@
                                 <form class="" action="<?php echo $block->getBaseUrl().'careers/index/save'; ?>" id="sandeep-gupta-form" method="post" enctype='multipart/form-data'  data-mage-init='{"validation": {}}'>
                                 <!-- <form id="applicationForm" action="save" method="post"  enctype=multipart/form-data> -->
                                     <label for="applied_for">Apply For:</label>
-                                    <input type="text" id="applied_for"  name="applied_for" value="<?php echo $job['job_id']; ?>"><br>
+                                    <input type="text" id="applied_for" disabled name="applied_for" value="<?php echo $job['job_designation']; ?>"><br>
+                                    <input type="text" id="applied_hiden" hidden name="applied_for" value="<?php echo $job['job_id']; ?>"><br>
 
-                                    <label for="application_id">Job Id:</label>
-                                    <input type="text" id="application_id"  value="<?php echo date('Ymd'); ?>" name="application_id"><br>
+                                    <!-- <label for="application_id">Job Id:</label>
+                                    <input type="text" id="application_id" disabled value="<?php// echo date('Ymd'); ?>" name="application_id"><br>
+                                    <input type="text" id="application_hidden" hidden value="<?php // echo date('Ymd'); ?>" name="application_id"><br> -->
 
                                     <label for="candidate_name">Name:</label>
                                     <input type="text" id="candidate_name" name="candidate_name">
@@ -40,7 +45,7 @@
                                     <label for="candidate_email">Email:</label>
                                     <input type="email" id="candidate_email" name="candidate_email">
                                     <label for="candidate_phone">Phone:</label>
-                                    <input type="text" id="candidate_phone" name="candidate_phone">
+                                    <input type="text" id="candidate_phone" name="candidate_phone" pattern="^[6-9]\d{9}$" required title="Please enter a valid 10-digit Indian mobile number">
                                     <label for="resume_path">Upload Resume:</label><br>
                                     <input type="file" id="resume_path" name="resume_path"><br>
                                      <?php echo 'Allow files Only '. $fileType ?>

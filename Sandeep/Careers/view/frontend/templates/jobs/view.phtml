@@ -19,20 +19,26 @@ $fileType = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterfa
                         <button type="button" class="apply-btn">Apply Now</button>
                         <div class="form" style="display: none;">
                             <div class="jobsform">
-                                <form id="applicationForm" action="careers/index/save" method="post">
-                                    <label for="candidate_name">Apply For:</label>
-                                    <input type="text" id="candidate_name" disabled name="candidate_name" value="<?php echo $job['job_designation']; ?>"><br>
-                                    <label for="applied_for">Job Id:</label>
-                                    <input type="text" id="applied_for" disabled value="<?php echo date('Ymd'); ?>" name="applied_for"><br>
+                                <form class="" action="<?php echo $block->getBaseUrl().'careers/index/save'; ?>" id="sandeep-gupta-form" method="post" enctype='multipart/form-data'  data-mage-init='{"validation": {}}'>
+                                <!-- <form id="applicationForm" action="save" method="post"  enctype=multipart/form-data> -->
+                                    <label for="applied_for">Apply For:</label>
+                                    <input type="text" id="applied_for" disabled name="applied_for" value="<?php echo $job['job_designation']; ?>"><br>
+                                    <input type="text" id="applied_hiden" hidden name="applied_for" value="<?php echo $job['job_id']; ?>"><br>
+
+                                    <!-- <label for="application_id">Job Id:</label>
+                                    <input type="text" id="application_id" disabled value="<?php// echo date('Ymd'); ?>" name="application_id"><br>
+                                    <input type="text" id="application_hidden" hidden value="<?php // echo date('Ymd'); ?>" name="application_id"><br> -->
+
                                     <label for="candidate_name">Name:</label>
                                     <input type="text" id="candidate_name" name="candidate_name">
+
                                     <label for="candidate_email">Email:</label>
                                     <input type="email" id="candidate_email" name="candidate_email">
                                     <label for="candidate_phone">Phone:</label>
-                                    <input type="text" id="candidate_phone" name="candidate_phone">
+                                    <input type="text" id="candidate_phone" name="candidate_phone" pattern="^[6-9]\d{9}$" required title="Please enter a valid 10-digit Indian mobile number">
                                     <label for="resume_path">Upload Resume:</label><br>
                                     <input type="file" id="resume_path" name="resume_path"><br>
-                                    <?php echo 'Allow files Only '. $fileType ?>
+                                     <?php echo 'Allow files Only '. $fileType ?>
                                     <div style="margin-top: 10px;">
                                         <input type="submit" id="submit-btn" value="Submit">
                                     </div>

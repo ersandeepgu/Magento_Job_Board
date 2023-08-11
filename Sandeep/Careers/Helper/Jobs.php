@@ -56,8 +56,10 @@ class Jobs extends AbstractHelper
         $model->setData('job_description', $data['job_description']);       
         $model->setData('job_category_id', $data['job_category_id']);       
         $model->setData('skills', $data['skills']);   
-         $model->setStatus($data['job_status']);    
+        $model->setStatus($data['job_status']);  
+        $model->setData('created_at', date('Y/m/d H:i:s')); 
         $model->setData('meta_title', $data['meta_title']);       
+        $model->setData('expire_at', $data['expire_at']);       
         $model->setData('meta_description', $data['meta_description']);       
         $model->setData('meta_keywords', $data['meta_keywords']);       
         $saveData= $this->resourceModel->save($model);
@@ -81,6 +83,7 @@ class Jobs extends AbstractHelper
             ->setSkills($data['skills'])
             ->setJobStatus($data['job_status'])
             ->setMetaTitle($data['meta_title'])
+            ->setExpireAt($data['expire_at'])
             ->setMetaDescription($data['meta_description'])
             ->setMetaKeywords($data['meta_keywords']);
         $saveData = $this->resourceModel->save($model);

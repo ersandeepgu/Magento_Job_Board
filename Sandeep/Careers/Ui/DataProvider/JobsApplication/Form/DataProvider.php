@@ -79,4 +79,20 @@ class DataProvider extends AbstractDataProvider
         }
         return $this->_loadedData;
     }
+
+    public function getButtonData()
+    {
+        return [
+            'custom_button' => [
+                'label' => __('Download Resume'),
+                'class' => 'primary',
+                'on_click' => sprintf(
+                    "location.href = '%s';",
+                    $this->getUrl('module/controller/action', ['application_id' => $this->getContext()->getRequest()->getParam('application_id')])
+                ),
+                'sort_order' => 20,
+            ],
+        ];
+    }
+
 }

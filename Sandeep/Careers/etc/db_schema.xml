@@ -30,7 +30,8 @@
         <constraint xsi:type="foreign" referenceId="JOB_CATEGORY_ID_JOB_CATEGORIES_JOB_CATEGORY_ID" table="jobs" column="job_category_id" referenceTable="job_categories" referenceColumn="job_category_id" onDelete="CASCADE"/>
     </table>
     <table name="job_applications" resource="default" engine="innodb" comment="Job Applications Table">
-        <column xsi:type="int" name="application_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Application Id"/>
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Job Id"/>
+        <column xsi:type="int" name="application_id" padding="10"  nullable="false" comment="Application Id"/>
         <column xsi:type="varchar" name="candidate_name" nullable="false" length="255" comment="Candidate Name"/>
         <column xsi:type="varchar" name="candidate_email" nullable="false" length="255" comment="Candidate Email"/>
         <column xsi:type="varchar" name="candidate_phone" nullable="false" length="255" comment="Candidate Phone"/>
@@ -39,7 +40,7 @@
         <column xsi:type="timestamp" name="applied_at" on_update="false" nullable="false" comment="Applied Time"/>
         <column xsi:type="varchar" name="status" nullable="false" length="10" comment="Status"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
-            <column name="application_id"/>
+            <column name="id"/>
         </constraint>
         <constraint xsi:type="foreign" referenceId="APPLIED_FOR_JOB_ID_JOBS_JOB_ID" table="job_applications" column="applied_for" referenceTable="jobs" referenceColumn="job_id" onDelete="CASCADE"/>
     </table>

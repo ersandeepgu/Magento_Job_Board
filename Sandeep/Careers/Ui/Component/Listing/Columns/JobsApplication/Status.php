@@ -54,6 +54,10 @@ class Status extends Column
                             $item[$fieldName . '_html'] = '<div class="grid-severity-critical"><span>Closed</span></div>';
                             $item[$fieldName . '_title'] = __('Status');
                             break;
+                        case 3:
+                            $item[$fieldName . '_html'] = '<div class="grid-severity-critical"><span>Rejected</span></div>';
+                            $item[$fieldName . '_title'] = __('Status');
+                            break;
                     }
                 }
             }

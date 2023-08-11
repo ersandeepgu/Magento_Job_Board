@@ -16,7 +16,8 @@ class Status implements OptionSourceInterface
         return [
             ['value' => 0, 'label' => __('Pending')],
             ['value' => 1, 'label' => __('Active')],
-            ['value' => 2, 'label' => __('Closed')]
+            ['value' => 2, 'label' => __('Closed')],
+            ['value' => 3, 'label' => __('Rejected')]
         ];
     }
 

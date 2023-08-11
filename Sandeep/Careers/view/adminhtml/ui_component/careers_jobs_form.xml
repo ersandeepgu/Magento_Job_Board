@@ -126,6 +126,7 @@
                 </item>
             </argument>
         </field>
+
         <field name="meta_title">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -162,6 +163,20 @@
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                     </item> 
+                </item>
+            </argument>
+        </field>
+        <field name="expire_at">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Expiration Date</item>
+                    <item name="dataType" xsi:type="string">dateRange</item>
+                    <item name="formElement" xsi:type="string">date</item>
+                    <item name="source" xsi:type="string">application</item>
+                    <item name="dataScope" xsi:type="string">expire_at</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
                 </item>
             </argument>
         </field>
